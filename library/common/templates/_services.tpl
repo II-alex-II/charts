@@ -5,7 +5,7 @@ of the main Service and any additionalServices.
 {{- define "common.services" -}}
   {{- if .Values.services -}}
 	{{- /* Add dict of primary services */ -}}
-    {{- range $name, $service := .Values.additionalServices }}
+    {{- range $name, $service := .Values.services }}
       {{- if $service.enabled -}}
         {{- print ("---") | nindent 0 -}}
         {{- $serviceValues := $service -}}
