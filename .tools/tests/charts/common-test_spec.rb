@@ -142,10 +142,12 @@ class Test < ChartTest
 
       it 'port name can be overridden' do
         values = {
-          service: {
-            port: {
-              name: 'server'
-            }
+          services: {
+		    main: {
+              port: {
+                name: 'server'
+              }
+			}
           }
         }
         chart.value values
@@ -159,9 +161,11 @@ class Test < ChartTest
       it 'targetPort can be overridden' do
         values = {
           service: {
-            port: {
-              targetPort: 80
-            }
+		    main: {
+              port: {
+                targetPort: 80
+              }
+			}
           }
         }
         chart.value values
@@ -175,9 +179,11 @@ class Test < ChartTest
       it 'targetPort cannot be a named port' do
         values = {
           service: {
-            port: {
-              targetPort: 'test'
-            }
+		    main: {
+              port: {
+                targetPort: 'test'
+              }
+			}
           }
         }
         chart.value values
